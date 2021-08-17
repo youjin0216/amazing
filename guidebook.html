@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>AB ROAD</title>
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="css/reset.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+<link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
+<style>
+body {
+   margin:0;
+   padding: 0;
+   min-width: 1300px;
+   font-size: 1em;
+   font-family: 'Roboto Condensed', sans-serif;
+}
+ul {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+a{
+   color: #000;
+}
+.wrapper header {
+  position: relative;
+  z-index: 10;
+  left: 50%;
+  margin-left: -600px;
+  padding-top: 40px;
+  width: 1200px;
+}
+.wrapper h1.logo {
+  /*float: left;*/
+  /*width: 170px;
+  height: 44px;*/
+}
+.wrapper h1.logo img {
+  position: absolute;
+  left: 50%;
+  margin-left: -120px;
+  vertical-align: middle;
+  width: 170px;
+  height: 44px;
+}
+.search a {
+	display: block;
+	position: relative;
+	top: 30px;
+	width: 23px;
+}
+.search a i {
+	width: 20px;
+	height: 20px;
+	font-size: 1.5em;
+	color: #333;
+}
+.search #layerSearch{
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	height:190px;
+	padding:0;
+	border-bottom:1px solid #ddd;
+	background:#fff;
+	z-index:1500
+}
+.search #layerSearch .layer-inner {
+	width: 1200px;
+	margin: 0 auto;
+	padding: 75px 0;
+}
+.search #layerSearch .layer-inner > span{
+    position: relative;
+    display: block;
+    float: left;
+    width: 70%;
+    padding-left: 35px;
+}
+.search #layerSearch .layer-inner > span i{
+	display:block;
+	position:absolute;
+	top:50%;
+	left:0;
+	width:23px;
+	height:22px;
+	margin-top:-11px;
+	font-size: 1.5em;
+	color: #333;
+}
+.search #layerSearch .layer-inner > span > input{
+	margin-left: 10px;
+	width:100%;
+	height:20px;
+	border:0;
+	border-radius:0;
+	font-family:'notokr-regular';
+	font-size:20px;
+	line-height:30px;
+	color:#888;
+}
+.search #layerSearch .layer-inner .btn-close{
+	float:right;
+	display:block;
+	width:12px;
+	height:12px;
+	padding: 10px;
+	margin-top: -45px;
+	font-size: 1.2em;
+}
+.dim {
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:1;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.wrapper header ul{
+  float: right;
+}
+.wrapper header ul li {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 15px 2px;
+}
+.wrapper header ul li a{
+  display: block;
+  padding-right: 8px;
+  font-size: 0.89em;
+  text-align: center;
+  color: #000;
+  border-right: 1px solid rgba(200, 200, 200, 0.4);
+}
+.wrapper header ul li:nth-child(3) a{
+  border-right: 0;
+}
+.wrapper header ul li:nth-child(4) a{
+  width: 80px;
+  height: 18px;
+  line-height: 18px;
+  background-color: #888;
+  border-radius: 15px;
+  border-right: 0;
+  color: #000;
+}
+.wrapper header ul li:nth-child(4) a:hover{
+	color: #fff;
+	background-color: #0085c7;
+}
+/*header END*/
+.wrapper nav#menu {
+	z-index: 1001;
+	margin: 25px auto 0 auto;
+	width: 1200px;
+	text-align: center;
+}
+.wrapper nav > ul {
+	position: relative;
+}
+.wrapper nav > ul > li {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+}
+/* .wrapper nav > ul > li:last-child{
+	float: right;
+	width: 250px;
+	margin-top: 2px;
+	padding: 0;
+} */
+.wrapper nav > ul > li > a {
+  position: relative;
+	display: block;
+	padding: 10px 35px 25px 35px;
+	font-weight: 500;
+	font-size: 1.1em;
+	text-align: center;
+	background-color: transparent;
+	color: #000;
+}
+.wrapper nav > ul > li > a::before{
+  content:"";
+  position: absolute;
+  top: 3px;
+  max-width: 0;
+  overflow: hidden;
+  width: 30px; height: 2px; background: #000;
+  -webkit-transition: max-width 0.8s; transition: max-width 0.8s;
+}
+.wrapper nav > ul > li > a:hover::before, .wrapper nav > ul > li > a:focus::before{
+  max-width: 100%;
+}
+.wrapper nav > ul > li::after{
+  position: absolute;
+  right: 0; top: 10px;
+  content: "";
+  width: 1px;
+  height: 17px;
+  background: rgba(0, 0, 0, 0.4);
+}
+.wrapper nav > ul > li:last-child::after{
+  display: none;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    font-family: 'Noto Sans KR', sans-serif, Helvetica;
+    color: #333;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    font-family: 'Noto Sans KR', sans-serif, Helvetica;
+    color: #333;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font-family: 'Noto Sans KR', sans-serif, Helvetica;
+    color: #333;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    font-family: 'Noto Sans KR', sans-serif, Helvetica;
+    color: #333;
+}
+
+.wrapper nav ul ul{
+	display: none;
+	position: absolute;
+	z-index: 110;
+	left: 0;
+	right: 0;
+  border: 1px solid #999;
+}
+/*.wrapper nav ul ul::before{
+	content:"";
+	position: absolute;
+	z-index: 110;
+	top: -10px;	left: 43%;
+	width: 0;	height: 0;
+	border-left: 10px solid #ccc;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid rgba(255, 255, 255, 1);
+}*/
+.wrapper nav ul ul a{
+	display: block;
+	padding: 0 20px;
+	line-height: 38px;
+	font-size: 0.875em;	font-weight: 400;  color: #666;
+	background-color: rgba(255, 255, 255, 1);
+	border-bottom: 1px solid #ccc;
+	-webkit-transition: all 0.3s/*300ms*/;
+	transition: all 0.3s/*300ms*/;
+}
+.wrapper nav ul ul li:last-child a{
+	border-bottom: 0;
+}
+/* nav > ul > li:hover ul {
+	display: block;
+}
+nav > ul > li ul.active{
+	display: block;
+} */
+.wrapper nav ul ul li:hover a{
+	background-color: #a6e2ff;
+
+}
+.wrapper nav ul ul li a.active{
+  background-color: #fff;
+}
+.subscribe_pop{
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 200;
+  margin-left: -250px;
+  margin-top: -300px;
+  padding: 20px;
+  width: 500px; height: 620px;
+  background-color: #fff;
+  border: 7px solid #0085c7;
+  box-sizing: border-box;
+}
+.subscribe_pop img.pop_logo{
+  display: block;
+  margin: 25px auto 10px auto;
+  width: 240px; height: 66px;
+}
+.subscribe_pop a.close{
+  position: absolute;
+  top: 0; right: 0;
+  padding: 10px;
+  outline: none;
+}
+.subscribe_pop i{
+  font-size: 2.3em;
+  color: #00466a;
+}
+.subscribe_pop img.books{
+  display: block;
+  margin: 35px auto 0 auto;
+  width: 272px; height: 163px;
+}
+.subscribe_pop p.pop_desc{
+  padding: 20px 0;
+  text-align: center;
+  font-size: 1.05em;
+  font-family: 'Noto Sans KR', sans-serif, Helvetica;
+  line-height: 1.3;
+  color: #333;
+}
+.subscribe_pop .book{
+  padding: 10px 0 0 0;
+}
+.subscribe_pop .book p{
+  float: left;
+  margin-left: 10px;
+  padding: 5px 0;
+  font-size: 0.875em;
+  font-family: 'Noto Sans KR', sans-serif, Helvetica;
+  line-height: 1.3;
+  color: #333;
+}
+.subscribe_pop .border{
+  float: left;
+  margin-left: 45px;
+  width: 50px; height: 50px;
+  padding: 7px 0; box-sizing: border-box;
+  border: 2px solid #00466a;
+  color: #00466a;
+  font-size: 0.875em; line-height: 1.1; text-align: center;
+}
+.subscribe_pop a.pop_go{
+  display: block;
+  margin: 20px auto 0 auto;
+  width: 110px; height: 40px;
+  border-radius: 5px;
+  background-color: #00466a;
+  color: #fff;
+  line-height: 40px;
+  font-family: 'Noto Sans KR', sans-serif, Helvetica;
+  font-size: 1em; text-align: center;
+  -webkit-transition: background-color 0.3s; transition: background-color 0.3s;
+}
+.subscribe_pop a.pop_go:hover{
+  background-color: #0085c7;
+}
+
+#top {
+  position: relative;
+  min-width: 1200px;
+  margin: 0 auto;
+}
+#top .banner {
+  text-align: center;
+}
+#top .banner_img.fixed {
+  position: fixed;
+  left: 0;
+  top: -190px;
+  z-index: 1;
+  width: 100%;
+  height: 190px;
+  background-color: #fff;
+  opacity: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+/*
+  -webkit-transform:translateY(-90px);
+  transform:translateY(-90px);
+*/
+  -webkit-transition:all 0.4s;
+  transition: all 0.4s;
+}
+#top .banner_img.fixed.active {
+    top: 0;
+/*
+  -webkit-transform:translateY(0);
+  transform:translateY(0);
+*/
+  opacity: 1;
+}
+#top .banner h2 {
+  position: absolute;
+  top:50%;
+  left: 50%;
+  margin-left: -140px;
+  margin-top: -22px;
+  color: #fff;
+  font-size: 2.8em; font-weight: bold;
+  text-align: center;
+}
+
+.box-booksList{
+	position: relative;
+	padding: 50px 50px 1140px; 50px;
+	max-width:944px;
+	margin:0 auto;
+}
+#bookTab ul {
+	position: relative;
+	margin: 0 auto;
+	width: 900px;
+}
+#bookTab ul li .gap{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 49%;
+	margin-right: 1%;
+	height: 50px;
+}
+#bookTab ul li:last-child .gap{
+	left: 50%;
+	margin-right: 0;
+	margin-left: 1%;
+}
+#bookTab ul li .gap a{
+	display: block;
+	position: relative;
+	width: 100%;
+	line-height: 50px; text-align: center;
+	font-family: 'Noto Sans KR', sans-serif, Helvetica;
+	border-top: 1px solid #b7b7b7;
+	color: #999;
+	box-sizing: border-box;
+	-webkit-transition: color 0.3s; transition: color 0.3s;
+}
+#bookTab ul li .gap a::before{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: -1px;
+	width: 0;
+	height: 1px;
+	background-color: #000;
+	-webkit-transition: width 0.5s; transition: width 0.5s;
+}
+#bookTab ul li .gap a:hover::before{
+	width: 100%;
+}
+#bookTab ul li .gap a:hover{
+	color: #000;
+}
+#bookTab ul li.on h3 a{
+	border-top: 2px solid #000;
+	color: #000;
+}
+
+.box-booksList .list-books{
+	display:block;
+	margin-top: 100px;
+}
+.box-booksList .list-books li{
+	width: 30%;
+	float:left;
+	margin-right: 5%;
+}
+.box-booksList .list-books li:nth-child(1),
+.box-booksList .list-books li:nth-child(4),
+.box-booksList .list-books li:nth-child(7){
+	margin-left: 0;
+}
+.box-booksList .list-books li:nth-child(3n){
+	margin-right:0;
+}
+.box-booksList .list-books li a{
+	display:block;
+	padding-bottom:44px;
+}
+.box-booksList .list-books li a span{
+	display:block;
+}
+.box-booksList .list-books li a .box-img{
+	background:#f1f1f0;
+	padding:31px 66px;
+	margin-bottom:12px;
+}
+.box-booksList .list-books li a .tt-1{
+	display: block;
+	font-family: 'Roboto Condensed', sans-serif;
+	color:#666;font-size:14px;
+}
+.box-booksList .list-books li a .tt-2{
+	display: block;
+	font-family: 'Noto Sans KR', sans-serif, Helvetica;
+	color:#333;
+	font-size:20px;
+}
+
+.box-booksList .list-books li a .box-img img{
+	width:100%;
+	height:100%;
+	box-shadow:5px 5px 42px #a1a1a1;
+}
+.box-booksList .list-books.type-1 li{
+	display:table;
+}
+.box-booksList .list-books.type-1 li a{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+}
+.box-booksList .list-books.type-1 li a .box-img{
+	height:194px;
+	vertical-align:middle;
+	text-align:center;
+}
+.box-booksList .list-books.type-2 {
+	display: none;
+	position: absolute;
+	top: 50px;
+}
+.box-booksList .list-books.type-2 li{
+	display:table;
+}
+.box-booksList .list-books.type-2 li a{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+}
+.box-booksList .list-books.type-2 li a .box-img{
+	height:194px;
+	vertical-align:middle;
+	text-align:center;
+}
+
+.footer {
+  border-top:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+  width:1200px;
+  margin:0 auto;
+}
+.footer ul li {
+  float:left;
+  padding:2em;
+}
+.footer ul li:after {
+  content:'|';
+  padding-left: 50px;
+}
+
+.footer ul li:last-child:after{
+  content:'';
+}
+.footer2{
+  width:100%;height:200px;
+  padding-bottom:50px;
+}
+
+.footer_nav{
+  width:1000px;
+  margin:0 auto;
+}
+.footer_nav ul li a:hover {
+	color:#0085c7;
+	font-weight: bold;
+}
+.footer_nav:after{
+  content:'';
+  clear:both;
+  display:block;
+}
+.info{
+  width:1200px;
+  margin:auto;
+ /*  padding-top: 50px; */
+}
+.sub_info1{
+  width:calc(60% - 70px);
+  float:left;
+  margin-left: 50px;
+  margin-top: 110px;
+  font-size: 13px;
+  color: #606265;
+}
+.sub_info1 h3,
+.sub_info1 p {
+  padding: 3px 0;
+}
+.sub_info2{
+  width:360px;
+  float:right;
+  font-size: 14px;
+  margin-top: 50px;
+  margin-right: 30px;
+  color: #606265;
+
+}
+
+.icon-wrap ul li{
+  float:left;
+  margin-left: 20px;
+
+}
+.icon-wrap ul li img {
+  width:40px;
+  height:40px;
+}
+.icon-wrap:after{
+  content:'';
+  clear:both;
+}
+.news{
+  padding-top: 20px;
+}
+.news div ul li{
+  position: relative;
+  border-top:1px solid #ccc;
+  padding:1em 0;
+}
+.news div ul li:nth-child(2){
+  border-bottom:1px solid #ccc;
+}
+.news .bot1 i, .news .bot2 i{
+  display: block;
+  position: absolute;
+  top: 16px;
+  right: 2px;
+
+}
+.bot1{
+  float:left;
+  width:calc(50% - 20px);
+  margin-right: 20px;
+  margin-left: 20px;
+
+}
+.bot2{
+  float:right;
+  width:calc(50% - 20px);
+
+}
+.bot1 ul li a:hover {
+	color:#0085c7;
+	font-weight: bold;
+}
+.bot2 ul li a:hover {
+	color:#0085c7;
+	font-weight: bold;
+}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(function(){
+  $(window).scroll(function(){
+    var t=$(window).scrollTop();
+
+    if(t > 250){
+      $(".fixed").addClass("active");
+    }else {
+      $(".fixed").removeClass("active");
+    }
+  });
+
+	$(".icon-search").click(function(e){
+		e.preventDefault();
+		$("#layerSearch").show();
+		$(".dim").show();
+	});
+	$("#layerSearch .btn-close").click(function(e){
+		e.preventDefault();
+		$("#layerSearch").hide();
+		$(".dim").hide();
+	});
+	$(".dim").click(function(e){
+		e.preventDefault();
+		$("#layerSearch").hide();
+		$(".dim").hide();
+	});
+    $("#bookTab ul li .sel.fir").parents("li").addClass("on");
+	
+    $("#bookTab ul li .sel").click(function(e){
+		e.preventDefault();
+		$("#bookTab ul li").removeClass("on");
+		$(this).parents("li").addClass("on");
+	});
+	$("#bookTab ul li .sel").focus(function(e){
+		e.preventDefault();
+		$("#bookTab ul li").removeClass("on");
+		$(this).parents("li").addClass("on");
+	});
+	$("#bookTab ul li a.sel.fir").click(function(e){
+		e.preventDefault();
+		$(".list-books.type-1").show();
+		$(".list-books.type-2").hide();
+	});
+	$("#bookTab ul li a.sel.se").click(function(e){
+		e.preventDefault();
+		$(".list-books.type-2").show();
+		$(".list-books.type-1").hide();
+	});
+	$("#bookTab ul li a.sel.fir").focus(function(e){
+		e.preventDefault();
+		$(".list-books.type-1").show();
+		$(".list-books.type-2").hide();
+	});
+	$("#bookTab ul li a.sel.se").focus(function(e){
+		e.preventDefault();
+		$(".list-books.type-2").show();
+		$(".list-books.type-1").hide();
+	});
+
+
+	$(".subscribe a").click(function(e){
+		e.preventDefault();
+		//console.log("클릭됨");
+		$(".subscribe_pop").show();
+		$(".dim").show();
+		$(".popup .close").focus();
+		$("body, html").addClass("hidden_overflow");
+	});
+	$(".popup .dim").click(function(e){
+		e.preventDefault();
+		//console.log("클릭됨");
+		$(".subscribe_pop").hide();
+		$(".dim").hide();
+		$("header .subscribe a").focus();
+		$("body, html").removeClass("hidden_overflow");
+	});
+
+	$(".popup .close").click(function(e){
+		e.preventDefault();
+		//console.log("클릭됨");
+		$(".subscribe_pop").hide();
+		$(".dim").hide();
+		$("header .subscribe a").focus();
+		$("body, html").removeClass("hidden_overflow");
+	});
+	$("nav > ul > li").hover(
+		function(){
+			$(this).children("ul").stop().slideDown(300);
+		},
+		function(){
+			$(this).children("ul").stop().slideUp(300);
+		}
+	);
+	$("nav > ul > li").focusin(function(){
+			$(this).children("ul").slideDown(400);
+	});
+	$("nav > ul > li li:last-child").focusout(function(){
+			$(this).parent().slideUp(400);
+	});
+	$("nav ul ul a").focusin(function(){
+			$(this).addClass("active");
+	});
+	$("nav ul ul a").focusout(function(){
+			$(this).removeClass("active");
+	});
+});
+
+</script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header_box">
+    <header id="header" class="clearfix">
+      <h1 class="logo"><a href="main.html"><img src="images/logo1.png" alt=""></a></h1>
+  	  <div class="search">
+        <a href="">
+        	<i class="icon-search"></i>
+        </a>
+  		  <div id="layerSearch" class="">
+    			<div class="layer-inner">
+    				<span>
+  						<i class="icon-search"></i>
+  						<input type="text" id="search" placeholder="Search" title="검색어" >
+  					</span>
+  					<a href="#none" class="btn-close"><span class="txt-none"><i class="icon-remove"></i></span></a>
+  				</div>
+  		  </div>
+  	  </div>
+  	  <ul>
+        <li><a href="">Login</a></li>
+        <li><a href="">Join Us</a></li>
+        <li><a href="">Site Map</a></li>
+        <li class="subscribe"><a href="">Subscribe</a></li>
+  	  </ul>
+    </header>
+    <nav id="menu">
+      <ul class="clearfix">
+        <li><a href="easy_trip.html" title="" data-hover="Easy trip">Easy trip</a>
+          <ul>
+             <li><a href="" title="">Asia</a></li>
+             <li><a href="" title="">Americas</a></li>
+             <li><a href="" title="">Europe</a></li>
+             <li><a href="" title="">Africa</a></li>
+             <li><a href="" title="">Oceania</a></li>
+          </ul>
+        </li>
+        <li><a href="theme_trip.html" title="" data-hover="Theme trip">Theme trip</a>
+          <ul>
+             <li><a href="" title="">Culture</a></li>
+             <li><a href="" title="">Healing</a></li>
+             <li><a href="" title="">Food</a></li>
+          </ul>
+        </li>
+        <li><a href="guidebook.html" title="" data-hover="Guide Book">Guide Book</a>
+        </li>
+        <li><a href="tips.html" title="" data-hover="Tips">Tips</a>
+          <ul>
+             <li><a href="" title="">Flight</a></li>
+             <li><a href="" title="">Hotel</a></li>
+             <li><a href="" title="">Exchange</a></li>
+          </ul>
+        </li>
+        <li><a href="sub_event.html" title="" data-hover="Events">Events</a></li>
+        <li><a href="" title="" data-hover="Follow us">Follow us</a>
+          <ul>
+            <li class="sns"><a href="" title="" class="facebook"><i class="icon-facebook"></i> Facebook</a></li>
+            <li class="sns"><a href="" title="" class="instargram"><i class="icon-instagram"></i> instargram</a></li>
+            <li class="sns"><a href="" title="" class="naver"><i class="icon-bold"></i> Naver Post</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<section id="top">
+	<div class="banner">
+		<div class="banner_img"><img src="images/sub_event/banner05.png" alt="">
+			<h2 class="banner_title">Guide book</h2>
+		</div>
+		<div class="banner_img fixed"><img src="images/sub_event/banner05.png" alt="">
+			<h2 class="banner_title">Guide book</h2>
+		</div>
+	</div>
+</section>
+<div class="box-booksList">
+	<div class="tab" id="bookTab">
+		<ul>
+			<li><h3 class="gap"><a href="" class="sel fir">가이드북</a></h3></li>
+			<li><h3 class="gap"><a href="" class="sel se">매거진</a></h3></li>
+		</ul>
+	</div>
+
+	<div class="list-books type-1">
+		<ul>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/guidebook1.png" alt="">
+					</span>
+					<span class="tt-1">Guidebook</span>
+					<span class="tt-2">발리 가이드</span>
+				</a>
+			</li>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/guidebook2.png" alt="">
+					</span>
+					<span class="tt-1">Guidebook</span>
+					<span class="tt-2">런던 가이드</span>
+				</a>
+			</li>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/guidebook3.png" alt="">
+					</span>
+					<span class="tt-1">Guidebook</span>
+					<span class="tt-2">방콕 가이드</span>
+				</a>
+			</li>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/guidebook4.png" alt="">
+					</span>
+					<span class="tt-1">Guidebook</span>
+					<span class="tt-2">하와이 가이드</span>
+				</a>
+			</li>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/guidebook5.png" alt="">
+					</span>
+					<span class="tt-1">Guidebook</span>
+					<span class="tt-2">홍콩 가이드</span>
+				</a>
+			</li>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/guidebook6.png" alt=" ">
+					</span>
+					<span class="tt-1">Guidebook</span>
+					<span class="tt-2">퀸즈랜드 가이드</span>
+				</a>
+			</li>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/guidebook7.png" alt="">
+					</span>
+					<span class="tt-1">Guidebook</span>
+					<span class="tt-2">중국 베이징 가이드</span>
+				</a>
+			</li>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/guidebook8.png" alt="">
+					</span>
+					<span class="tt-1">Guidebook</span>
+					<span class="tt-2">도쿄 가이드</span>
+				</a>
+			</li>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/guidebook9.png" alt="">
+					</span>
+					<span class="tt-1">Guidebook</span>
+					<span class="tt-2">필리핀 가이드</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="list-books type-2">
+		<ul>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/magazine3.jpg" alt="">
+					</span>
+					<span class="tt-1">ISSUE 73</span>
+					<span class="tt-2">2017. 3월호</span>
+				</a>
+			</li>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/magazine2.jpg" alt="">
+					</span>
+					<span class="tt-1">ISSUE 72</span>
+					<span class="tt-2">2017. 2월호</span>
+				</a>
+			</li>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/magazine1.jpg" alt="">
+					</span>
+					<span class="tt-1">ISSUE 71</span>
+					<span class="tt-2">2017. 1월호</span>
+				</a>
+			</li>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/magazine4.jpg" alt="">
+					</span>
+					<span class="tt-1">ISSUE 70</span>
+					<span class="tt-2">2016. 12월호</span>
+				</a>
+			</li>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/magazine5.jpg" alt="">
+					</span>
+					<span class="tt-1">ISSUE 69</span>
+					<span class="tt-2">2016. 11월호</span>
+				</a>
+			</li>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/magazine6.jpg" alt="">
+					</span>
+					<span class="tt-1">ISSUE 68</span>
+					<span class="tt-2">2016. 10월호</span>
+				</a>
+			</li>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/magazine7.jpg" alt="">
+					</span>
+					<span class="tt-1">ISSUE 67</span>
+					<span class="tt-2">2016. 9월호</span>
+				</a>
+			</li>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/magazine8.jpg" alt="">
+					</span>
+					<span class="tt-1">ISSUE 66</span>
+					<span class="tt-2">2016. 8월호</span>
+				</a>
+			</li>
+			<li>
+				<a href="#none">
+					<span class="box-img">
+						<img src="images/magazine9.jpg" alt="">
+					</span>
+					<span class="tt-1">ISSUE 65</span>
+					<span class="tt-2">2016. 7월호</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<footer>
+	<div class="footer">
+		<div class="footer_nav">
+			<ul>
+				<li><a href="#">광고/제휴 문의</a></li>
+				<li><a href="#">포스트 카드 등록</a></li>
+				<li><a href="#">내 생애 최고의 여행 & 호텔리뷰</a></li>
+				<li><a href="#">고객센터</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer2">
+		<div class="info">
+			<div class="sub_info1">
+				<h3>(주)AB-ROAD</h3>
+				<p>서울시 성북구 성북로 108 창원빌딩 201호 (성북동 97-31)</p>
+				<p>TEL : 02-3676-2001 / FAX : 02-3676-2001 / EMAIL : skyblue@abroad.co.kr</p>
+				<p>본 사이트의 콘텐츠는 저작권법의 보호를 받으며, 무단 전재, 복사, 배포 등을 금합니다.</p>
+				<p>Copyright 2006-2014 www.abroad.co.kr All rights reserved</p>
+			</div>
+			<div class="sub_info2">
+				<div class="icon-wrap">
+					<ul>
+						<li><a href="#"><img src="images/btn_etc_7.jpg" alt=""></a></li>
+						<li><a href="#"><img src="images/btn_etc_8.jpg" alt=""></a></li>
+						<li><a href="#"><img src="images/btn_etc_9.jpg" alt=""></a></li>
+						<li><a href="#"><img src="images/btn_etc_10.jpg" alt=""></a></li>
+						<li><a href="#"><img src="images/btn_etc_11.jpg" alt=""></a></li>
+						<li><a href="#"><img src="images/btn_etc_12.jpg" alt=""></a></li>
+					</ul>
+				</div>
+				<div class="news">
+					<div class="bot1">
+						<ul>
+							<li><a href="">브랜드 소개 <i class="icon-chevron-right"></i></a></li>
+							<li><a href="#">뉴스레터 신청해지 <i class="icon-chevron-right"></i></a></li>
+						</ul>
+					</div>
+					<div class="bot2">
+						<ul>
+							<li><a href="#">정기구독 <i class="icon-chevron-right"></i></a></li>
+							<li><a href="#">개인정보 처리 방침 <i class="icon-chevron-right"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="popup">
+      <div class="subscribe_pop">
+          <img src="images/logo1.png" alt="" class="pop_logo">
+          <a href="" class="close"><i class="icon-remove-sign"></i></a>
+          <img src="images/popup_back.png" alt="" class="books">
+          <p class="pop_desc">
+            <에이비로드>가 신선한 여행정보를 전달해 드려요.<br>
+            구독신청하고 여행 에너지를 충전하세요.<br>
+          </p>
+          <div class="book clearfix">
+            <div class="border">프린트<br>매거진</div>
+            <p>배송비 무료!<br>집에서 편하게 받아보는 최대 33%할인된 AB-Road!</p>
+          </div>
+          <div class="book clearfix">
+            <div class="border">모바일<br>매거진</div>
+            <p>태블릿/스마트폰으로 즐기는 매거진<br>최대 60%할인된 가격으로 즐기세요!</p>
+          </div>
+          <a href="" class="pop_go">구독신청 GO!</a>
+      </div>
+    </div>
+<div class="dim"></div>
+</body>
+</html>

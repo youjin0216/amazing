@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AB ROAD</title>
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="css/reset.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+<link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    padding: 0;
+/*    min-width: 1300px;*/
+    font-size: 1em;
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+}
+
+a {
+      color: #000;
+ }
+caption{
+    display:none;
+}
+.clearfix::before, .clearfix::after{
+    content:"";
+    display:block;
+}
+.clearfix::after{
+    clear:both;
+}
+
+.wrapper header {
+  position: relative;
+  z-index: 10;
+  left: 50%;
+  margin-left: -600px;
+  padding-top: 40px;
+  width: 1200px;
+}
+.wrapper h1.logo {
+  /*float: left;*/
+  /*width: 170px;
+  height: 44px;*/
+}
+.wrapper h1.logo img {
+  position: absolute;
+  left: 50%;
+  margin-left: -120px;
+  vertical-align: middle;
+  width: 170px;
+  height: 44px;
+}
+.search a {
+	display: block;
+	position: relative;
+	top: 30px;
+	width: 23px;
+}
+.search a i {
+	width: 20px;
+	height: 20px;
+	font-size: 1.5em;
+	color: #333;
+}
+.search #layerSearch{
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	height:190px;
+	padding:0;
+	border-bottom:1px solid #ddd;
+	background:#fff;
+	z-index:1500
+}
+.search #layerSearch .layer-inner {
+	width: 1200px;
+	margin: 0 auto;
+	padding: 75px 0;
+}
+.search #layerSearch .layer-inner > span{
+    position: relative;
+    display: block;
+    float: left;
+    width: 70%;
+    padding-left: 35px;
+}
+.search #layerSearch .layer-inner > span i{
+	display:block;
+	position:absolute;
+	top:50%;
+	left:0;
+	width:23px;
+	height:22px;
+	margin-top:-11px;
+	font-size: 1.5em;
+	color: #333;
+}
+.search #layerSearch .layer-inner > span > input{
+	margin-left: 10px;
+	width:100%;
+	height:20px;
+	border:0;
+	border-radius:0;
+	font-family:'notokr-regular';
+	font-size:20px;
+	line-height:30px;
+	color:#888;
+}
+.search #layerSearch .layer-inner .btn-close{
+	float:right;
+	display:block;
+	width:12px;
+	height:12px;
+	padding: 10px;
+	margin-top: -45px;
+	font-size: 1.2em;
+}
+.dim {
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:1;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.wrapper header ul{
+      float: right;
+}
+.wrapper header ul li {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 15px 2px;
+}
+.wrapper header ul li a{
+  display: block;
+  padding-right: 8px;
+  font-size: 0.89em;
+  text-align: center;
+  color: #000;
+  border-right: 1px solid rgba(200, 200, 200, 0.4);
+}
+.wrapper header ul li:nth-child(3) a{
+  border-right: 0;
+}
+.wrapper header ul li:nth-child(4) a{
+  width: 80px;
+  height: 18px;
+  line-height: 18px;
+  background-color: #888;
+  border-radius: 15px;
+  border-right: 0;
+  color: #000;
+}
+.wrapper header ul li:nth-child(4) a:hover{
+	color: #fff;
+	background-color: #0085c7;
+}
+/*header END*/
+.wrapper nav#menu {
+	z-index: 1001;
+	margin: 25px auto 0 auto;
+	width: 1200px;
+	text-align: center;
+}
+.wrapper nav > ul {
+	position: relative;
+}
+.wrapper nav > ul > li {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+}
+/* .wrapper nav > ul > li:last-child{
+	float: right;
+	width: 250px;
+	margin-top: 2px;
+	padding: 0;
+} */
+.wrapper nav > ul > li > a {
+  position: relative;
+	display: block;
+	padding: 10px 35px 25px 35px;
+	font-weight: 500;
+	font-size: 1.1em;
+	text-align: center;
+	background-color: transparent;
+	color: #000;
+}
+.wrapper nav > ul > li > a::before{
+  content:"";
+  position: absolute;
+  top: 3px;
+  max-width: 0;
+  overflow: hidden;
+  width: 30px; height: 2px; background: #000;
+  -webkit-transition: max-width 0.8s; transition: max-width 0.8s;
+}
+.wrapper nav > ul > li > a:hover::before, .wrapper nav > ul > li > a:focus::before{
+  max-width: 100%;
+}
+.wrapper nav > ul > li::after{
+  position: absolute;
+  right: 0; top: 10px;
+  content: "";
+  width: 1px;
+  height: 17px;
+  background: rgba(0, 0, 0, 0.4);
+}
+.wrapper nav > ul > li:last-child::after{
+  display: none;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    font-family: 'Noto Sans KR', sans-serif, Helvetica;
+    color: #333;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    font-family: 'Noto Sans KR', sans-serif, Helvetica;
+    color: #333;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font-family: 'Noto Sans KR', sans-serif, Helvetica;
+    color: #333;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    font-family: 'Noto Sans KR', sans-serif, Helvetica;
+    color: #333;
+}
+
+.wrapper nav ul ul{
+	display: none;
+	position: absolute;
+	z-index: 110;
+	left: 0;
+	right: 0;
+  border: 1px solid #999;
+}
+/*.wrapper nav ul ul::before{
+	content:"";
+	position: absolute;
+	z-index: 110;
+	top: -10px;	left: 43%;
+	width: 0;	height: 0;
+	border-left: 10px solid #ccc;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid rgba(255, 255, 255, 1);
+}*/
+.wrapper nav ul ul a{
+	display: block;
+	padding: 0 20px;
+	line-height: 38px;
+	font-size: 0.875em;	font-weight: 400;  color: #666;
+	background-color: rgba(255, 255, 255, 1);
+	border-bottom: 1px solid #ccc;
+	-webkit-transition: all 0.3s/*300ms*/;
+	transition: all 0.3s/*300ms*/;
+}
+.wrapper nav ul ul li:last-child a{
+	border-bottom: 0;
+}
+/* nav > ul > li:hover ul {
+	display: block;
+}
+nav > ul > li ul.active{
+	display: block;
+} */
+.wrapper nav ul ul li:hover a{
+	background-color: #a6e2ff;
+
+}
+.wrapper nav ul ul li a.active{
+  background-color: #fff;
+}
+
+
+#top {
+     position: relative;
+	  width: 100%;
+      margin: 0;
+      text-align: center;
+
+}
+
+.subscribe_pop {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 200;
+            margin-left: -250px;
+            margin-top: -300px;
+            padding: 20px;
+            width: 500px;
+            height: 620px;
+            background-color: #fff;
+            border: 7px solid #0085c7;
+            box-sizing: border-box;
+        }
+        
+        .subscribe_pop img.pop_logo {
+            display: block;
+            margin: 25px auto 10px auto;
+            width: 240px;
+            height: 66px;
+        }
+        
+        .subscribe_pop a.close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            outline: none;
+        }
+        
+        .subscribe_pop i {
+            font-size: 2.3em;
+            color: #00466a;
+        }
+        
+        .subscribe_pop img.books {
+            display: block;
+            margin: 35px auto 0 auto;
+            width: 272px;
+            height: 163px;
+        }
+        
+        .subscribe_pop p.pop_desc {
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1.05em;
+            font-family: 'Noto Sans KR', sans-serif, Helvetica;
+            line-height: 1.3;
+            color: #333;
+        }
+        
+        .subscribe_pop .book {
+            padding: 10px 0 0 0;
+        }
+        
+        .subscribe_pop .book p {
+            float: left;
+            margin-left: 10px;
+            padding: 5px 0;
+            font-size: 0.875em;
+            font-family: 'Noto Sans KR', sans-serif, Helvetica;
+            line-height: 1.3;
+            color: #333;
+        }
+        
+        .subscribe_pop .border {
+            float: left;
+            margin-left: 45px;
+            width: 50px;
+            height: 50px;
+            padding: 7px 0;
+            box-sizing: border-box;
+            border: 2px solid #00466a;
+            color: #00466a;
+            font-size: 0.875em;
+            line-height: 1.1;
+            text-align: center;
+        }
+        
+        .subscribe_pop a.pop_go {
+            display: block;
+            margin: 20px auto 0 auto;
+            width: 110px;
+            height: 40px;
+            border-radius: 5px;
+            background-color: #00466a;
+            color: #fff;
+            line-height: 40px;
+            font-family: 'Noto Sans KR', sans-serif, Helvetica;
+            font-size: 1em;
+            text-align: center;
+            -webkit-transition: background-color 0.3s;
+            transition: background-color 0.3s;
+        }
+        
+        .subscribe_pop a.pop_go:hover {
+            background-color: #0085c7;
+        }
+
+#top .banner {
+      text-align: center;
+}
+#top .banner_img.fixed {
+  position: fixed;
+  left: 0;
+  top: -190px;
+  z-index: 1;
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+  opacity: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+/*
+  -webkit-transform:translateY(-90px);
+  transform:translateY(-90px);
+*/
+  -webkit-transition:all 0.4s;
+  transition: all 0.4s;
+}
+#top .banner_img.fixed.active {
+    top: 0;
+/*
+  -webkit-transform:translateY(0);
+  transform:translateY(0);
+*/
+  opacity: 1;
+}
+#top .banner h1 {
+      position: absolute;
+      top: 50%;
+      margin-top: -50px;
+      width: 100%;
+      color: #fff;
+      font-size: 2.8em;
+      font-weight: bold;
+      text-align: center;
+}
+#top ul {
+      margin-top: 10px;
+      display: inline-block;
+}
+#top ul li {
+      display: inline-block;
+      padding: 10px 20px;
+}
+
+#top ul li a {
+      font-size: 1.2em;
+}
+
+#top ul li a:hover {
+      color: #698ff7;
+}
+#top .mid-menu.fixed {
+  position: fixed;
+  left: 0;
+  top: 150px;
+  z-index: 1;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0;
+  -webkit-transform:translateY(-90px);
+  transform:translateY(-90px);
+  -webkit-transition:all 0.4s;
+  transition: all 0.4s;
+}
+#top .mid-menu.fixed.active {
+  -webkit-transform:translateY(0);
+  transform:translateY(0);
+  opacity: 1;
+}
+#total{
+    text-align:center;
+	font-family: 'Noto Sans KR', sans-serif, Helvetica;
+}
+#total .total_upper{
+    display:inline-block;
+    margin-top:30px;
+    width:1200px;
+    text-align:center;
+}
+#total .total_upper li{
+    position:relative;
+    float:left;
+    width:33.333%;
+}
+#total .total_upper li .icon_area{
+    position: relative;
+}
+#total .total_upper li .icon_area img{
+    position:relative;
+    z-index:0;
+}
+#total .total_upper li .icon_area .circle{
+    position:absolute;
+    left:50%;
+    top:12px;
+    margin-left: -39px;
+    text-indent:-9999px;
+    width:65px;
+    height:65px;
+    border:8px solid #a6e2ff;
+    border-radius:50%;
+    z-index:-1;
+}
+#total .total_upper li .icon_area h2{
+    font-size:1.25em;
+}
+#total .total_upper li .icon_area p{
+    margin-top:15px;
+    font-size:0.875em;
+}
+#total .total_upper li .icon_arrow{
+    position:absolute;
+    right: -10%;
+    top:60px;
+    font-size:2em;
+}
+#total #total_contents{
+    margin-top:80px;
+    background-color:#a6e2ff;
+}
+#total #total_contents h2{
+    padding:100px 0 80px 0;
+    font-size:2em;
+	font-family: 'Noto Sans KR', sans-serif, Helvetica;
+}
+#total #total_contents .tc_list{
+    margin:0 auto;
+    text-align:center;
+    width:1200px;
+}
+#total #total_contents .tc_list ul{
+    width:100%;
+}
+#total #total_contents .tc_list ul li{
+    position:relative;
+    float:left;
+    width:30%;
+    margin-left:5%;
+    box-shadow:3px 3px 3px rgba(0,0,0,0.3);
+    border-radius:5px;
+    overflow:hidden;
+}
+#total #total_contents .tc_list ul li:first-child{
+    margin-left:0;
+}
+#total #total_contents .tc_list ul li .list_desc{
+    background-color:#fff;
+    height: 250px;
+}
+#total #total_contents .tc_list ul li .list_desc::after{
+    content:"";
+    display:block;
+    position:absolute;
+    right:0;
+    top:0;
+    width:30px;
+    height:25px;
+    background-color:#00466a;
+}
+#total #total_contents .tc_list ul li .list_desc h3{
+    color:#00466a;
+    font-size:1.25em;
+    font-weight:bold;
+    padding:30px 0;
+}
+#total #total_contents .tc_list ul li .list_desc p{
+    padding-bottom:30px;
+    font-weight:bold;
+    line-height:1.5;
+    color:#00466a;
+}
+#total #total_contents .tc_list ul li .list_desc .price_btn{
+    display:inline-block;
+    margin-bottom:20px;
+    text-align:center;
+}
+#total #total_contents .tc_list ul li .list_desc .price_btn a{
+    display:block;
+    padding:12px;
+    width:80px;
+    background-color: #00466a;
+    color:#fff;
+    border-radius:5px;
+    font-weight:bold;
+}
+#total #total_contents .tc_list ul li .list_desc .price_btn a span{
+    float:right;
+    margin-right:10px;
+}
+#total #total_contents .tc_list ul li .list_img{
+    width:100%;
+    height:270px;
+}
+#total #total_contents .tc_list ul li .list_img img{
+    min-width:100%;
+    min-height:100%;
+}
+#total #total_contents .tc_list ul li .tc_list_dim{
+    display:block;
+    position:absolute;
+    left:0;
+    top:242px;
+    width:100%;
+    height:270px;
+    background-color:rgba(0,0,0,0.4);
+	opacity:0;
+}
+#total #total_contents .tc_list ul li .tc_list_dim.on{
+    opacity:1;
+}
+#total #total_contents .tc_list ul li .tc_list_dim.on .dim_circle{
+    position:absolute;
+    left:50%;
+    top:100px;
+    margin-left:-50px;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background-color:#a6e2ff;
+    line-height:100px;
+    color:#fff;
+    text-shadow:2px 2px 3px rgba(0,0,0,0.4);
+}
+#flight {
+    background-color:#a6e2ff;
+	font-family: 'Noto Sans KR', sans-serif, Helvetica;
+}
+#flight .flight_area{
+    margin:0 auto;
+    width:1200px;
+    text-align:center;
+    padding-top:80px;
+}
+#flight .flight_area h2{
+    font-size:2em;
+    font-weight:bold;
+}
+#flight .flight_area h3{
+    font-size:1.5em;
+}
+#flight .flight_area span{
+    font-size:0.875em;
+}
+#flight .flight_area .flight_menu ul {
+    display:inline-block;
+    margin-top:50px;
+    width:1196px;
+    border-radius:5px;
+    overflow:hidden;
+}
+#flight .flight_area .flight_menu ul li{
+    float:left;
+}
+#flight .flight_area .flight_menu ul li a{
+    display:block;
+    width:90px;
+    padding:15px 40px;
+    background-color:#00466a;
+    color:#fff;
+    font-weight:bold;
+    border-right:1px solid #03557f;
+}
+#flight .flight_area .flight_menu ul li:last-child a{
+    border-right:none;
+}
+#flight .flight_area .flight_menu ul li a.active{
+    background-color:#0085c7;
+}
+#flight .flight_area .flight_list li{
+    display:none;
+}
+#flight .flight_area .flight_list li.on{
+    display:block;
+}
+#flight .flight_area .flight_list table{
+    display:inline-block;
+    margin-top:30px;
+    box-shadow:2px 2px 5px rgba(0,0,0,0.5);
+    border-radius:5px;
+    overflow:hidden;
+}
+#flight .flight_area .flight_list table thead tr{
+    border-bottom:1px solid #ebebeb;
+}
+#flight .flight_area .flight_list table thead th,
+#flight .flight_area .flight_list table tbody td{
+     width:110px;
+     padding:15px 45px;
+    background-color:rgba(255,255,255,0.6);
+
+}
+#flight .flight_area .flight_list table thead th a{
+    font-weight:bold;
+}
+#hotel{
+    background-color:#a6e2ff;
+}
+#hotel .hotel_area{
+    margin:0 auto;
+    width:1200px;
+    text-align:center;
+    padding-top:80px;
+}
+#hotel .hotel_area h2{
+    font-size:2em;
+    font-weight:bold;
+}
+#hotel .hotel_area h3{
+    font-size:1.5em;
+}
+#hotel .hotel_area span{
+    font-size:0.875em;
+}
+#hotel .hotel_area .hotel_form{
+    margin-top:50px;
+    background-color:rgba(255,255,255,0.6);
+    box-shadow:2px 2px 5px rgba(0,0,0,0.5);
+    border-radius:5px;
+    overflow:hidden;
+}
+
+#hotel .hotel_area .hotel_form form{
+    display:inline-block;
+    width:95%;
+    margin:30px 0;
+}
+#hotel .hotel_area .hotel_form form .destination{
+    display:inline-block;
+    width:25%;
+    margin-right:2%;
+    vertical-align:middle;
+}
+#hotel .hotel_area .hotel_form form .destination label{
+    display:block;
+    margin-bottom:10px;
+    text-align:center;
+    font-weight:bold;
+}
+#hotel .hotel_area .hotel_form form .destination .desty{
+    padding:10px 0;
+    width:250px;
+    border-radius:5px;
+    border:none;
+
+}
+#hotel .hotel_area .hotel_form form .check{
+    display:inline-block;
+    width:43%;
+    margin-right:2%;
+    vertical-align:middle;
+}
+#hotel .hotel_area .hotel_form form .check label{
+    display:block;
+    margin-bottom:10px;
+    text-align:center;
+    font-weight:bold;
+}
+#hotel .hotel_area .hotel_form form .check .check_in,
+#hotel .hotel_area .hotel_form form .check .check_out{
+    display:inline-block;
+    padding: 10px 0;
+    vertical-align:middle;
+    border-radius:5px;
+    border:none;
+}
+#hotel .hotel_area .hotel_form form .check .dash{
+    margin-right:3px;
+    font-size:1.25em;
+    vertical-align:middle;
+}
+#hotel .hotel_area .hotel_form .check .c_img{
+    display:inline-block;
+    margin:0 5px;
+    vertical-align:middle;
+}
+#hotel .hotel_area .hotel_form form .check .night{
+    display:inline-block;
+    margin-left:10px;
+    padding:10px 0;
+    vertical-align:middle;
+    border-radius:5px;
+}
+#hotel .hotel_area .hotel_form form .room{
+    display:inline-block;
+    width:15%;
+    margin-right:2%;
+    vertical-align:middle;
+}
+#hotel .hotel_area .hotel_form form .room label{
+    display:block;
+    margin-bottom:10px;
+    font-weight:bold;
+    text-align:center;
+}
+#hotel .hotel_area .hotel_form form .room .room_per{
+    padding:10px 0;
+    border-radius:5px;
+}
+#hotel .hotel_area .hotel_form form .submit{
+    display:inline-block;
+    width:10%;
+    vertical-align:bottom;
+}
+#hotel .hotel_area .hotel_form form .submit .sub{
+    padding:10px 20px;
+    border-radius:5px;
+    box-shadow:none;
+    background-color:#00466a;
+    color:#fff;
+    border:1px solid #00466a;
+}
+#exchange{
+        background-color: #a6e2ff;
+}
+#exchange .exchange_area{
+    margin:0 auto;
+    width:1200px;
+    text-align:center;
+    padding:80px 0;
+}
+#exchange .exchange_area h2{
+    font-size:2em;
+    font-weight:bold;
+}
+#exchange .exchange_area h3{
+    font-size:1.5em;
+}
+#exchange .exchange_area span{
+    font-size:0.875em;
+}
+#exchange .exchange_area table{
+    display:inline-block;
+    margin-top:30px;
+    box-shadow:2px 2px 5px rgba(0,0,0,0.5);
+    border-radius:5px;
+    overflow:hidden;
+}
+#exchange .exchange_area table thead tr{
+    border-bottom:1px solid #ebebeb;
+}
+#exchange .exchange_area table thead th,
+#exchange .exchange_area table tbody td{
+     width:150px;
+     padding:15px 45px;
+    background-color:rgba(255,255,255,0.6);
+}
+#exchange .exchange_area table thead th {
+    font-weight:bold;
+}
+.footer {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.footer ul li {
+    float: left;
+    padding: 2em;
+}
+
+.footer ul li:after {
+    content: '|';
+    padding-left: 50px;
+}
+
+.footer ul li:last-child:after {
+    content: '';
+}
+
+.footer2 {
+    width: 100%;
+    height: 200px;
+    padding-bottom: 50px;
+}
+
+.footer_nav {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.footer_nav ul li a:hover {
+    color: #0085c7;
+    font-weight: bold;
+}
+
+.footer_nav:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.info {
+    width: 1200px;
+    margin: auto;
+    /* padding-top: 50px; */
+}
+
+.sub_info1 {
+    width: calc(60% - 70px);
+    float: left;
+    margin-left: 50px;
+    margin-top: 110px;
+    font-size: 13px;
+    color: #606265;
+}
+
+.sub_info1 h3,
+.sub_info1 p {
+    padding: 3px 0;
+}
+
+.sub_info2 {
+    width: 360px;
+    float: right;
+    font-size: 14px;
+    margin-top: 50px;
+    margin-right: 30px;
+    color: #606265;
+}
+.icon-wrap ul {
+	height: 42px;
+}
+.icon-wrap ul li {
+    float: left;
+    margin-left: 20px;
+}
+
+.icon-wrap ul li img {
+    width: 40px;
+    height: 40px;
+}
+
+.icon-wrap:after {
+    content: '';
+    clear: both;
+}
+
+.news {
+    padding-top: 20px;
+}
+
+.news div ul li {
+    position: relative;
+    border-top: 1px solid #ccc;
+    padding: 1em 0;
+}
+
+.news div ul li:nth-child(2) {
+    border-bottom: 1px solid #ccc;
+}
+
+.news .bot1 i,
+.news .bot2 i {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 2px;
+}
+
+.bot1 {
+    float: left;
+    width: calc(50% - 20px);
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.bot2 {
+    float: right;
+    width: calc(50% - 20px);
+}
+
+.bot1 ul li a:hover {
+    color: #0085c7;
+    font-weight: bold;
+}
+
+.bot2 ul li a:hover {
+    color: #0085c7;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 1200px) {
+    .wrapper header {
+        left: 0;
+        margin-left: 0;
+        width: 100%;
+    }
+    .wrapper nav {
+        left: 0;
+        margin-left: 0;
+        width: 100%;
+    }
+    #total .total_upper{
+        width: 100%;
+    }
+    #total #total_contents .tc_list{
+        width: 100%;
+    }
+	.footer {
+		width: 100%;
+	}
+	.footer_nav {
+		width: 100%;
+	}
+	.footer ul li {
+		padding: 2em 0;
+		width: 25%;
+	}
+	.footer ul li a {
+		display: block;
+		float: left;
+		width: 80%;
+		overflow: hidden;
+		text-align: center;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		word-wrap: normal;
+	}
+	.footer ul li:after {
+		content: "|";
+		display: block;
+		float: left;
+		padding-left: 10%;
+	}
+	.footer2 .info {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 1055px) {
+    .wrapper nav ul li:last-child {
+        display: none;
+    }
+}
+@media only screen and (max-width: 926px) {
+	.footer2 .info .sub_info1 {
+		margin-left: 40px;
+		margin-top: 80px;
+		width: calc(50% - 60px);
+	}
+	.footer2 .info .sub_info2 {
+		margin-right: 60px;
+		margin-top: 60px;
+		width: calc(50% - 60px);
+	}
+}
+@media only screen and (max-width: 900px){
+    .s_menu .menu_btn{
+        width: 30px;
+    }
+}
+@media only screen and (max-width: 876px) {
+    .footer2 .info .sub_info1 {
+		display: none;
+	}
+	.footer2 .info .sub_info2 {
+		margin: 0 auto;
+		margin-top: 60px;
+		float: none;
+		width: 80%;
+	}
+	.footer2 .info .icon-wrap {
+		text-align: center;
+	}
+	.footer2 .info .icon-wrap ul li {
+		display: inline-block;
+		float: none;
+		margin: 0 20px;
+	}
+}
+@media only screen and (max-width: 638px) {
+	.footer2 .info .icon-wrap ul li {
+		margin: 0 10px;
+	}
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+$(function(){
+  $(window).scroll(function(){
+    var t=$(window).scrollTop();
+
+    if(t > 250){
+      $(".fixed").addClass("active");
+    }else {
+      $(".fixed").removeClass("active");
+    }
+  });
+  $(".icon-search").click(function(e){
+		e.preventDefault();
+		$("#layerSearch").show();
+		$(".dim").show();
+	});
+	$("#layerSearch .btn-close").click(function(e){
+		e.preventDefault();
+		$("#layerSearch").hide();
+		$(".dim").hide();
+	});
+	$(".dim").click(function(e){
+		e.preventDefault();
+		$("#layerSearch").hide();
+		$(".dim").hide();
+	});
+
+	$(".tc_list_dim").hover(
+        function () {
+            $(this).addClass("on");
+        },
+         function(){
+             $(this).removeClass("on");
+         });
+    $(".flight_menu ul li:first-child a").addClass("active");
+    $(".flight_menu ul li a").parents().find(".flight_list li:first-child").addClass("on");
+    $(".flight_menu ul li a").click(function (e) {
+        e.preventDefault();
+        $(".flight_menu ul li a").removeClass("active");
+        $(this).addClass("active");
+
+        $(".flight_menu ul li a").parents().find(".flight_list li").removeClass("on");
+
+        if ($(".flight_menu ul li:nth-child(1) a").hasClass("active") == true) {
+            $(this).parents().find(".flight_list li:nth-child(1)").addClass("on");
+        }
+        else if ($(".flight_menu ul li:nth-child(2) a").hasClass("active") == true) {
+            $(this).parents().find(".flight_list li:nth-child(2)").addClass("on");
+        }else if($(".flight_menu ul li:nth-child(3) a").hasClass("active") == true) {
+             $(this).parents().find(".flight_list li:nth-child(3)").addClass("on");
+        }
+        else if($(".flight_menu ul li:nth-child(4) a").hasClass("active") == true) {
+             $(this).parents().find(".flight_list li:nth-child(4)").addClass("on");
+        }else if($(".flight_menu ul li:nth-child(5) a").hasClass("active") == true) {
+             $(this).parents().find(".flight_list li:nth-child(5)").addClass("on");
+        }else{
+            $(this).parents().find(".flight_list li:nth-child(6)").addClass("on");
+        }
+    });
+
+
+	$(".subscribe a").click(function(e){
+		e.preventDefault();
+        //console.log("클릭됨");
+        $(".subscribe_pop").show();
+        $(".dim").show();
+        $(".popup .close").focus();
+        $("body, html").addClass("hidden_overflow");
+	});
+	$(".popup .dim").click(function(e){
+		e.preventDefault();
+		//console.log("클릭됨");
+		$(".subscribe_pop").hide();
+		$(".dim").hide();
+		$("header .subscribe a").focus();
+		$("body, html").removeClass("hidden_overflow");
+	});
+
+	$(".popup .close").click(function(e){
+		e.preventDefault();
+		//console.log("클릭됨");
+		$(".subscribe_pop").hide();
+		$(".dim").hide();
+		$("header .subscribe a").focus();
+		$("body, html").removeClass("hidden_overflow");
+	});
+	$("nav > ul > li").hover(
+		function(){
+			$(this).children("ul").stop().slideDown(300);
+		},
+		function(){
+			$(this).children("ul").stop().slideUp(300);
+		}
+	);
+	$("nav > ul > li").focusin(function(){
+			$(this).children("ul").slideDown(400);
+	});
+	$("nav > ul > li li:last-child").focusout(function(){
+			$(this).parent().slideUp(400);
+	});
+	$("nav ul ul a").focusin(function(){
+			$(this).addClass("active");
+	});
+	$("nav ul ul a").focusout(function(){
+			$(this).removeClass("active");
+	});
+    $(".price_btn a").hover(
+        function(){
+            $(this).css({backgroundColor:"rgba(0,0,0,0.2)"});
+            $(this).css({color:"#00466a"});
+        },
+        function(){
+            $(this).css({backgroundColor:"#00466a"});
+            $(this).css({color:"#fff"});
+        }
+    );
+});
+</script>
+</head>
+<body>
+    <div class="wrapper">
+       <div class="header_box">
+            <header id="header" class="clearfix">
+                <h1 class="logo">
+                    <a href="main.html"><img src="images/logo1.png" alt=""></a>
+                </h1>
+                <div class="search">
+                    <a href="">
+                        <i class="icon-search"></i>
+                    </a>
+                    <div id="layerSearch" class="">
+                        <div class="layer-inner">
+                            <span>
+							<i class="icon-search"></i>
+							<input type="text" id="search" placeholder="Search" title="검색어" >
+						</span>
+                            <a href="#none" class="btn-close"><span class="txt-none"><i class="icon-remove"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+                <ul>
+                    <li><a href="">Login</a></li>
+                    <li><a href="">Join Us</a></li>
+                    <li><a href="">Site Map</a></li>
+                    <li class="subscribe"><a href="">Subscribe</a></li>
+                </ul>
+            </header>
+            <nav id="menu">
+                <ul class="clearfix">
+                    <li><a href="easy_trip.html" title="" data-hover="Easy trip">Easy trip</a>
+                        <ul>
+                            <li><a href="" title="">Asia</a></li>
+                            <li><a href="" title="">Americas</a></li>
+                            <li><a href="" title="">Europe</a></li>
+                            <li><a href="" title="">Africa</a></li>
+                            <li><a href="" title="">Oceania</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="theme_trip.html" title="" data-hover="Theme trip">Theme trip</a>
+                        <ul>
+                            <li><a href="" title="">Culture</a></li>
+                            <li><a href="" title="">Healing</a></li>
+                            <li><a href="" title="">Food</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="guidebook.html" title="" data-hover="Guide Book">Guide Book</a>
+                    </li>
+                    <li><a href="tips.html" title="" data-hover="Tips">Tips</a>
+                        <ul>
+                            <li><a href="" title="">Flight</a></li>
+                            <li><a href="" title="">Hotel</a></li>
+                            <li><a href="" title="">Exchange</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="sub_event.html" title="" data-hover="Events">Events</a></li>
+                    <li><a href="" title="" data-hover="Follow us">Follow us</a>
+                        <ul>
+                            <li class="sns"><a href="" title="" class="facebook"><i class="icon-facebook"></i> Facebook</a></li>
+                            <li class="sns"><a href="" title="" class="instargram"><i class="icon-instagram"></i> instargram</a></li>
+                            <li class="sns"><a href="" title="" class="naver"><i class="icon-bold"></i> Naver Post</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <section id="top">
+			<div class="banner">
+				<div class="banner_img"><img src="images/sub/banner05.png" alt="">
+					<h1 class="banner_title">Tips</h1>
+				</div>
+				<div class="banner_img fixed"><img src="images/sub/banner05.png" alt="">
+					<h1 class="banner_title">Tips</h1>
+				</div>
+			</div>
+			<ul class="mid-menu">
+				<li><a href="#total">Total</a></li>
+				<li><a href="#flight">Flight</a></li>
+				<li><a href="#hotel">Hotel</a></li>
+				<li><a href="#exchange">Exchange</a></li>
+			</ul>
+			<ul class="mid-menu fixed">
+				<li><a href="#total">Total</a></li>
+				<li><a href="#flight">Flight</a></li>
+				<li><a href="#hotel">Hotel</a></li>
+				<li><a href="#exchange">Exchange</a></li>
+			</ul>
+        </section>
+        <section id="total">
+            <ul class="total_upper">
+                <li>
+                    <div class="icon_area">
+                        <img src="images/icon_01.png" alt="flight">
+                        <div class="circle">circle area</div>
+                        <h2>STEP. 1</h2>
+                        <p>여행의 시작,  항공권 예매</p>
+                    </div>
+                    <div class="icon_arrow">
+                        <a href=""><span class="icon-chevron-right"></span></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon_area">
+                        <img src="images/icon_03.png" alt="flight">
+                        <div class="circle">circle area</div>
+                        <h2>STEP. 2</h2>
+                        <p>힐링 여행 정복,  호텔 예약</p>
+                    </div>
+                    <div class="icon_arrow">
+                        <a href=""><span class="icon-chevron-right"></span></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon_area">
+                        <img src="images/icon_04.png" alt="flight">
+                        <div class="circle">circle area</div>
+                        <h2>STEP. 3</h2>
+                        <p>즐거운 여행 준비,  환전</p>
+                    </div>
+                </li>
+            </ul>
+            <section id="total_contents">
+                <h2>설렘을 안고 AB-ROAD와 함께 여행 Go! Go!</h2>
+                <div class="tc_list clearfix">
+                    <ul>
+                        <li>
+                            <div class="list_desc">
+                                <h3>01</h3>
+                                <p>아시아의 하와이,<br />봄의 향기 가득한 오키나와행<br /><span>티켓을 찾아보세요!</span></p>
+                                <div class="price_btn"><a href="" title="">Go<span class="icon-chevron-right"></span></a></div>
+                            </div>
+                            <div class="list_img">
+                                <img src="images/flight_1.jpg" alt="flight1" />
+                            </div>
+                            <div class="tc_list_dim">
+                                <a href="" title=""><div class="dim_circle">InfoGraphic</div></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_desc">
+                                <h3>02</h3>
+                                <p>낭만의 도시 파리,<br /> 에펠탑을 배경으로<br /><span>편안한 휴식을 준비하세요!</span></p>
+                                <div class="price_btn"><a href="" title="">Go<span class="icon-chevron-right"></span></a></div>
+                            </div>
+                            <div class="list_img">
+                                <img src="images/hotel_1.jpg" alt="hotel1" />
+                            </div>
+                            <div class="tc_list_dim">
+                                <a href="" title=""><div class="dim_circle">InfoGraphic</div></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_desc">
+                                <h3>03</h3>
+                                <p>여행 준비의 마지막,<br /> 완벽한 계획과 함께 <br /><span>즐거운 여행을 떠나보세요!</span></p>
+                                <div class="price_btn"><a href="" title="">Go<span class="icon-chevron-right"></span></a></div>
+                            </div>
+                            <div class="list_img">
+                                <img src="images/exchange_1.jpg" alt="exchange1" />
+                            </div>
+                            <div class="tc_list_dim">
+                                <a href="" title=""><div class="dim_circle">InfoGraphic</div></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+        <section id="flight">
+            <div class="flight_area">
+                <h2>FLIGHT</h2>
+                <h3>프로모션 항공권</h3><span>항공권 발매 1위 대한민국 최저가 보장!</span>
+                <div class="flight_menu clearfix">
+                    <ul>
+                        <li><a href="" title="">일본</a></li>
+                        <li><a href="" title="">중국</a></li>
+                        <li><a href="" title="">아시아</a></li>
+                        <li><a href="" title="">미주/캐나다</a></li>
+                        <li><a href="" title="">남태평양</a></li>
+                        <li><a href="" title="">유럽</a></li>
+                        <li><a href="" title="">아프리카</a></li>
+                    </ul>
+                </div>
+                <ul class="flight_list">
+                    <li>
+                        <table>
+                            <caption>항공권</caption>
+                            <thead>
+                                <tr>
+                                    <th><a href="" title="">도시</a></th>
+                                    <th><a href="" title="">항공사</a></th>
+                                    <th colspan="2"><a href="" title="">운임조건</a></th>
+                                    <th><a href="" title="">출발기간</a></th>
+                                    <th><a href="" title="">총액운임(왕복)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="" title="">후쿠오카</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">71,800~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">오키나와</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">92,000~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">기타큐슈</a></td>
+                                    <td><a href="" title="">진에어</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">95,500~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">도쿄(나리카)</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">97,800~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">오사카</a></td>
+                                    <td><a href="" title="">이스타항공</a></td>
+                                    <td><a href="" title="">성인</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170326~20171028</a></td>
+                                    <td><a href="" title="">109,800~</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li>
+                        <table>
+                            <caption>항공권</caption>
+                            <thead>
+                                <tr>
+                                    <th><a href="" title="">도시</a></th>
+                                    <th><a href="" title="">항공사</a></th>
+                                    <th colspan="2"><a href="" title="">운임조건</a></th>
+                                    <th><a href="" title="">출발기간</a></th>
+                                    <th><a href="" title="">총액운임(왕복)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="" title="">청도(칭다오)</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">72,000~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">마카오</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">98,800~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">홍콩</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">101,500~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">대련(다롄)</a></td>
+                                    <td><a href="" title="">아시아나항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">107,800~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">북경(베이징)</a></td>
+                                    <td><a href="" title="">중국남방항공</a></td>
+                                    <td><a href="" title="">성인</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170326~20171028</a></td>
+                                    <td><a href="" title="">119,800~</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li>
+                        <table>
+                            <caption>항공권</caption>
+                            <thead>
+                                <tr>
+                                    <th><a href="" title="">도시</a></th>
+                                    <th><a href="" title="">항공사</a></th>
+                                    <th colspan="2"><a href="" title="">운임조건</a></th>
+                                    <th><a href="" title="">출발기간</a></th>
+                                    <th><a href="" title="">총액운임(왕복)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="" title="">후쿠오카</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">71,800~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">오키나와</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">92,000~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">기타큐슈</a></td>
+                                    <td><a href="" title="">진에어</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">95,500~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">도쿄(나리카)</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">97,800~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">오사카</a></td>
+                                    <td><a href="" title="">이스타항공</a></td>
+                                    <td><a href="" title="">성인</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170326~20171028</a></td>
+                                    <td><a href="" title="">109,800~</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li>
+                        <table>
+                            <caption>항공권</caption>
+                            <thead>
+                                <tr>
+                                    <th><a href="" title="">도시</a></th>
+                                    <th><a href="" title="">항공사</a></th>
+                                    <th colspan="2"><a href="" title="">운임조건</a></th>
+                                    <th><a href="" title="">출발기간</a></th>
+                                    <th><a href="" title="">총액운임(왕복)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="" title="">청도(칭다오)</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">72,000~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">마카오</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">98,800~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">홍콩</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">101,500~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">대련(다롄)</a></td>
+                                    <td><a href="" title="">아시아나항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">107,800~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">북경(베이징)</a></td>
+                                    <td><a href="" title="">중국남방항공</a></td>
+                                    <td><a href="" title="">성인</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170326~20171028</a></td>
+                                    <td><a href="" title="">119,800~</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li>
+                        <table>
+                            <caption>항공권</caption>
+                            <thead>
+                                <tr>
+                                    <th><a href="" title="">도시</a></th>
+                                    <th><a href="" title="">항공사</a></th>
+                                    <th colspan="2"><a href="" title="">운임조건</a></th>
+                                    <th><a href="" title="">출발기간</a></th>
+                                    <th><a href="" title="">총액운임(왕복)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="" title="">후쿠오카</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">71,800~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">오키나와</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">92,000~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">기타큐슈</a></td>
+                                    <td><a href="" title="">진에어</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">95,500~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">도쿄(나리카)</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">97,800~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">오사카</a></td>
+                                    <td><a href="" title="">이스타항공</a></td>
+                                    <td><a href="" title="">성인</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170326~20171028</a></td>
+                                    <td><a href="" title="">109,800~</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li>
+                        <table>
+                            <caption>항공권</caption>
+                            <thead>
+                                <tr>
+                                    <th><a href="" title="">도시</a></th>
+                                    <th><a href="" title="">항공사</a></th>
+                                    <th colspan="2"><a href="" title="">운임조건</a></th>
+                                    <th><a href="" title="">출발기간</a></th>
+                                    <th><a href="" title="">총액운임(왕복)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="" title="">청도(칭다오)</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">72,000~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">마카오</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">98,800~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">홍콩</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">101,500~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">대련(다롄)</a></td>
+                                    <td><a href="" title="">아시아나항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">107,800~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">북경(베이징)</a></td>
+                                    <td><a href="" title="">중국남방항공</a></td>
+                                    <td><a href="" title="">성인</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170326~20171028</a></td>
+                                    <td><a href="" title="">119,800~</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li>
+                        <table>
+                            <caption>항공권</caption>
+                            <thead>
+                                <tr>
+                                    <th><a href="" title="">도시</a></th>
+                                    <th><a href="" title="">항공사</a></th>
+                                    <th colspan="2"><a href="" title="">운임조건</a></th>
+                                    <th><a href="" title="">출발기간</a></th>
+                                    <th><a href="" title="">총액운임(왕복)</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="" title="">후쿠오카</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">71,800~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">오키나와</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">92,000~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">기타큐슈</a></td>
+                                    <td><a href="" title="">진에어</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">95,500~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">도쿄(나리카)</a></td>
+                                    <td><a href="" title="">제주항공</a></td>
+                                    <td><a href="" title="">성인/현대카드</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170318~20171130</a></td>
+                                    <td><a href="" title="">97,800~</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="" title="">오사카</a></td>
+                                    <td><a href="" title="">이스타항공</a></td>
+                                    <td><a href="" title="">성인</a></td>
+                                    <td><a href="" title="">12개월(왕복)</a></td>
+                                    <td><a href="" title="">20170326~20171028</a></td>
+                                    <td><a href="" title="">109,800~</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="hotel">
+            <div class="hotel_area">
+                <h2>HOTEL</h2>
+                <h3>호텔 검색</h3><span>국내외 호텔 사이트 통합 비교!</span>
+                <div class="hotel_form">
+                    <form>
+                        <div class="destination">
+                            <label>목적지</label>
+                            <input type="text" placeholder="도시, 호텔, 공항 등 검색 가능합니다." class="desty" />
+                        </div>
+                        <div class="check">
+                            <label>체크인/아웃</label>
+                            <input type="text" value="2017-04-09(일)" class="check_in" />
+                            <input type="image" src="images/calendar_icon.gif" alt="calendar" class="c_img" />
+                            <span class="dash">~</span>
+                            <input type="text" value="2017-04-10(월)" class="check_out" />
+                            <input type="image" src="images/calendar_icon.gif" alt="calendar" class="c_img" />
+                            <select class="night">
+                                    <option value="1night" selected>1박</option>
+                                    <option value="2night">2박</option>
+                                    <option value="3night">3박</option>
+                                    <option value="4night">4박</option>
+                                    <option value="5night">5박</option>
+                                </select>
+                        </div>
+                        <div class="room">
+                            <label>객실/인원</label>
+                            <select class="room_per">
+                                    <option selected>객실1 - 성인1</option>
+                                    <option>객실1 - 성인2</option>
+                                    <option>객실1 - 성인3</option>
+                                    <option>객실1 - 성인4</option>
+                                </select>
+                        </div>
+                        <div class="submit">
+                            <input type="submit" value="검색하기" class="sub" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section id="exchange">
+            <div class="exchange_area">
+                <h2>EXCHANGE</h2>
+                <h3>환율 정보</h3><span>실시간으로 환율을 확인!</span>
+                <table>
+                    <caption>환율</caption>
+                    <thead>
+                        <tr>
+                            <th>통화명</th>
+                            <th>매매기준율</th>
+                            <th>사실 때</th>
+                            <th>파실 때</th>
+                            <th>미화 환산율</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>미국 USD</td>
+                            <td>1,131.00</td>
+                            <td>1,150.79</td>
+                            <td>1,111.21</td>
+                            <td>1.000</td>
+                        </tr>
+                        <tr>
+                            <td>유럽연합 EUR</td>
+                            <td>1,214.13</td>
+                            <td>1,238.29</td>
+                            <td>1,189.98</td>
+                            <td>1.074</td>
+                        </tr>
+                        <tr>
+                            <td>일본 JPY</td>
+                            <td>999.51</td>
+                            <td>1,017.00</td>
+                            <td>982.02</td>
+                            <td>0.884</td>
+                        </tr>
+                        <tr>
+                            <td>중국 CNY</td>
+                            <td>164.19</td>
+                            <td>172.39</td>
+                            <td>155.99</td>
+                            <td>0.145</td>
+                        </tr>
+                        <tr>
+                            <td>홍콩 HKD</td>
+                            <td>145.70</td>
+                            <td>148.57</td>
+                            <td>142.83</td>
+                            <td>0.129</td>
+                        </tr>
+                        <tr>
+                            <td>대만 TWD</td>
+                            <td>37.02</td>
+                            <td>40.35</td>
+                            <td>34.43</td>
+                            <td>0.033</td>
+                        </tr>
+                        <tr>
+                            <td>영국 GBP</td>
+                            <td>1,397.63</td>
+                            <td>1,425.16</td>
+                            <td>1,370.10</td>
+                            <td>1.236</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <footer>
+            <div class="footer">
+                <div class="footer_nav">
+                    <ul>
+                        <li><a href="#">광고/제휴 문의</a></li>
+                        <li><a href="#">포스트 카드 등록</a></li>
+                        <li><a href="#">내 생애 최고의 여행 & 호텔리뷰</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer2">
+                <div class="info">
+                    <div class="sub_info1">
+                        <h3>(주)AB-ROAD</h3>
+                        <p>서울시 성북구 성북로 108 창원빌딩 201호 (성북동 97-31)</p>
+                        <p>TEL : 02-3676-2001 / FAX : 02-3676-2001 / EMAIL : skyblue@abroad.co.kr</p>
+                        <p>본 사이트의 콘텐츠는 저작권법의 보호를 받으며, 무단 전재, 복사, 배포 등을 금합니다.</p>
+                        <p>Copyright 2006-2014 www.abroad.co.kr All rights reserved</p>
+                    </div>
+                    <div class="sub_info2">
+                        <div class="icon-wrap">
+                            <ul>
+                                <li>
+                                    <a href="#"><img src="images/btn_etc_7.jpg" alt=""></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/btn_etc_8.jpg" alt=""></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/btn_etc_9.jpg" alt=""></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/btn_etc_10.jpg" alt=""></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/btn_etc_11.jpg" alt=""></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/btn_etc_12.jpg" alt=""></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="news">
+                            <div class="bot1">
+                                <ul>
+                                    <li><a href="">브랜드 소개 <i class="icon-chevron-right"></i></a></li>
+                                    <li><a href="#">뉴스레터 신청해지 <i class="icon-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="bot2">
+                                <ul>
+                                    <li><a href="#">정기구독 <i class="icon-chevron-right"></i></a></li>
+                                    <li><a href="#">개인정보 처리 방침 <i class="icon-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
